@@ -6,7 +6,7 @@
 /*   By: wrhett <wrhett@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 19:57:46 by wrhett            #+#    #+#             */
-/*   Updated: 2019/11/23 14:53:38 by wrhett           ###   ########.fr       */
+/*   Updated: 2019/11/25 12:33:35 by wrhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char	*ft_fillit_read(char *dest)
 	if (ret == -1 || ret < 20 || ((ret + 1) % 21) != 0 || ret > 545)
 	{
 		ft_putendl("error");
-		return (NULL);
+		exit(1);
 	}
 	bufer[ret] = '\0';
 	str = ft_strdup(bufer);
@@ -71,8 +71,10 @@ int			main(int argc, char **argv)
 	if (head != NULL)
 	{
 		len_tab = (ft_strlen(str) + 1) / 21;
+		free(str);
 		side = ft_min_map(head, len_tab);
 		ft_puzzle_soluthion(head, len_tab, side);
+		ft_free_array(head, len_tab);
 	}
 	return (0);
 }

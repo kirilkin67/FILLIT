@@ -6,7 +6,7 @@
 /*   By: wrhett <wrhett@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 19:58:24 by wrhett            #+#    #+#             */
-/*   Updated: 2019/11/23 14:53:58 by wrhett           ###   ########.fr       */
+/*   Updated: 2019/11/25 11:11:51 by wrhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ size_t			ft_min_map(t_fillit **head, size_t len_tab);
 int				ft_puzzle(char *map, t_fillit **head, size_t len, size_t side);
 void			ft_puzzle_soluthion(t_fillit **head, size_t len, size_t side);
 void			ft_print_tetrimino(t_fillit **head, size_t len, size_t side);
+void			ft_free_array(t_fillit **tab, size_t index);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: wrhett <wrhett@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 19:52:14 by wrhett            #+#    #+#             */
-/*   Updated: 2019/11/19 14:22:46 by wrhett           ###   ########.fr       */
+/*   Updated: 2019/11/25 11:23:27 by wrhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void		ft_print_tetrimino(t_fillit **head, size_t len, size_t side)
 	while (m < len)
 	{
 		n = 0;
-		while (n < 16)
+		while (n < 13)
 		{
 			if (head[m]->tetrimino & (1 << (15 - n)))
 				str[n / 4 * side + n % 4 + head[m]->shift] = head[m]->id;

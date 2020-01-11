@@ -6,7 +6,7 @@
 /*   By: wrhett <wrhett@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 20:01:22 by wrhett            #+#    #+#             */
-/*   Updated: 2019/11/23 18:20:34 by wrhett           ###   ########.fr       */
+/*   Updated: 2019/11/26 11:18:53 by wrhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 static void	ft_clear_str(char *map, t_fillit **head, size_t m, int side)
 {
 	int	n;
+	int	b;
 
+	b = (head[m]->tetrimino == 34952) ? 13 : 10;
 	n = 0;
-	while (n < 13)
+	while (n < b)
 	{
 		if (head[m]->tetrimino & (1 << (15 - n)))
 			map[n / 4 * side + n % 4 + head[m]->shift] = '\0';
@@ -30,9 +32,11 @@ static void	ft_clear_str(char *map, t_fillit **head, size_t m, int side)
 static void	ft_set_str(char *map, t_fillit **head, size_t m, int side)
 {
 	int	n;
+	int	b;
 
+	b = (head[m]->tetrimino == 34952) ? 13 : 10;
 	n = 0;
-	while (n < 13)
+	while (n < b)
 	{
 		if (head[m]->tetrimino & (1 << (15 - n)))
 			map[n / 4 * side + n % 4 + head[m]->shift] = '1';
@@ -45,12 +49,14 @@ static int	ft_test_str(char *map, t_fillit **head, size_t m, size_t side)
 	size_t	offset;
 	int		bit;
 	int		n;
+	int		b;
 
+	b = (head[m]->tetrimino == 34952) ? 13 : 10;
 	while ((size_t)head[m]->shift < side * side)
 	{
 		n = 0;
 		bit = 0;
-		while (n < 13 && bit != 4)
+		while (n < b && bit != 4)
 		{
 			offset = n / 4 * side + n % 4 + head[m]->shift;
 			if ((head[m]->tetrimino & (1 << (15 - n))) && (map[offset] != '1')
