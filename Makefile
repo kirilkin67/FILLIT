@@ -6,7 +6,7 @@
 #    By: wrhett <wrhett@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/15 20:07:08 by wrhett            #+#    #+#              #
-#    Updated: 2019/11/23 15:20:26 by wrhett           ###   ########.fr        #
+#    Updated: 2020/01/14 11:11:52 by wrhett           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fillit
 
 SRC = main.c \
 		ft_fillit_validation.c ft_tetrimino_validation.c \
-		ft_array_struct_create.c ft_puzzle.c ft_print_tetrimino.c \
+		ft_array_struct_create.c ft_print_tetrimino.c \
 		ft_puzzle_soluthion.c
 		
 
